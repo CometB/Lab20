@@ -136,12 +136,12 @@ void Unit::equip(Equipment *e){
 	if(equipment != NULL){
 		vector<int> stat = equipment->getStat();
 		hpmax -= stat[0];
-		if(hp >= hpmax) hp = hpmax;
 		atk -= stat[1];
 		def -= stat[2];
 	}
 	vector<int> stat = e->getStat();
 	hpmax += stat[0];
+	if(hp >= hpmax) hp = hpmax;
 	atk += stat[1];
 	def += stat[2];
 	equipment = e;
